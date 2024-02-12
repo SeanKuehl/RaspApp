@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomePageView, CreateMealIdeaView, MealIdeaListView
+from .views import HomePageView, CreateMealIdeaView, MealIdeaListView, delete_meal
 
 urlpatterns = [
     
     path('', HomePageView.as_view(), name='Home'),
     path('MealIdea/create', CreateMealIdeaView.as_view(), name="create_meal"),
     path('MealIdea/list', MealIdeaListView.as_view(), name='list_meal'),
+    path(r'^deleteMeal/(?P<pk>\d+)/$', delete_meal, name="delete_meal"),
 ]

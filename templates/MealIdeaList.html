@@ -20,6 +20,9 @@
 {% for object in object_list %}
 <!-- Display Objects -->
 <p>{{ object.meal }}</p>
+<a href="{% url 'delete_meal' object.id %}">
+    <button>Delete</button>
+</a>
     
    
 <hr/>
